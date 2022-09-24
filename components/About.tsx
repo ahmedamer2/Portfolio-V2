@@ -43,12 +43,6 @@ const About = (props: Props) => {
                ratione sequi molestiae voluptatibus. Inventore adipisci quos,
                hic sunt, eum similique quidem tempore possimus sint deserunt
                quasi excepturi molestias rerum distinctio quia! Alias, numquam
-               magnam? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-               Consequatur, quaerat. Iure, sed ut iusto in labore quia quidem
-               quaerat ad. Praesentium magnam impedit quia, illum vitae ad
-               itaque sit, facilis molestiae quos numquam asperiores adipisci et
-               fugiat officia? Quam consequuntur quisquam fugiat porro magni,
-               perferendis dolorum optio dolores velit voluptates!
             </p>
          </div>
       </motion.div>
