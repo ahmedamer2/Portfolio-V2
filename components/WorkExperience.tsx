@@ -16,7 +16,7 @@ const WorkExperience = (props: Props) => {
             Experience
          </h3>
 
-         <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory">
+         <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x scrollbar scrollbar-track-[#D8C3A5]/50 scrollbar-thumb-[#E85A4F]/40">
             <ExperienceCard />
             <ExperienceCard />
             <ExperienceCard />

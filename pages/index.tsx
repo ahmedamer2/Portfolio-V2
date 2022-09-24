@@ -12,7 +12,7 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
    return (
-      <div className="bg-[#EAE7DC] text-[#8E8D8A] h-screen snap-y snap-mandatory overflow-scroll z-0 scroll-smooth">
+      <div className="bg-[#EAE7DC] text-[#8E8D8A] h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scroll-smooth scrollbar scrollbar-track-[#D8C3A5]/50 scrollbar-thumb-[#E85A4F]/40">
          <Head>
             <title>Ahmed Amer</title>
          </Head>
