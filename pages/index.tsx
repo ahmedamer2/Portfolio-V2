@@ -8,7 +8,8 @@ import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
-import styles from "../styles/Home.module.css";
+import { ArrowUpIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const Home: NextPage = () => {
    return (
@@ -49,6 +50,14 @@ const Home: NextPage = () => {
          <section id="contact" className="snap-start">
             <ContactMe />
          </section>
+
+         <Link href="#hero">
+            <footer className="sticky bottom-5 w-full cursor-pointer">
+               <div className="flex items-center justify-center">
+                  <ArrowUpIcon className="text-[#E85A4F] h-10 w-10 rounded-full filter grayscale hover:grayscale-0" />
+               </div>
+            </footer>
+         </Link>
       </div>
    );
 };
