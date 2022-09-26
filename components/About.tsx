@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+   pageInfo: PageInfo;
+};
 
-const About = (props: Props) => {
+const About = ({ pageInfo }: Props) => {
    return (
       <motion.div
          initial={{ opacity: 0 }}
@@ -26,7 +30,7 @@ const About = (props: Props) => {
             }}
             viewport={{ once: true }}
             transition={{ duration: 1.2 }}
-            src="Ahmed.jpeg"
+            src={urlFor(pageInfo?.profilePic).url()}
             className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]"
          />
 
@@ -36,14 +40,7 @@ const About = (props: Props) => {
                <span className="underline decoration-[#E85A4F]/50">little</span>{" "}
                background:
             </h4>
-            <p className="text-base">
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
-               cumque id similique consequuntur tempora temporibus nulla modi
-               dolores magnam, officia sed perferendis rem laudantium veniam,
-               ratione sequi molestiae voluptatibus. Inventore adipisci quos,
-               hic sunt, eum similique quidem tempore possimus sint deserunt
-               quasi excepturi molestias rerum distinctio quia! Alias, numquam
-            </p>
+            <p className="text-base">{pageInfo?.backgroundInformation}</p>
          </div>
       </motion.div>
    );

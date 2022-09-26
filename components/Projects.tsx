@@ -1,10 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
+import Image from "next/image";
 
-type Props = {};
+type Props = {
+   projects: Project[];
+};
 
-const Projects = (props: Props) => {
-   const projects = [1, 2, 3, 4, 5];
+const Projects = ({ projects }: Props) => {
    return (
       <motion.div
          initial={{ opacity: 0 }}
@@ -16,9 +20,9 @@ const Projects = (props: Props) => {
             Projects
          </h3>
          <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-track-[#D8C3A5]/50 scrollbar-thumb-[#E85A4F]/40 scrollbar-thin">
-            {projects.map((project, index) => (
+            {projects?.map((project, index) => (
                <div
-                  key={index}
+                  key={project._id}
                   className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
                >
                   <motion.img
@@ -26,7 +30,7 @@ const Projects = (props: Props) => {
                      transition={{ duration: 1.2 }}
                      whileInView={{ opacity: 1, y: 0 }}
                      viewport={{ once: true }}
-                     src="movie_app.png"
+                     src={urlFor(project?.image).url()}
                      alt=""
                      className="w-[150px] h-[150px] object-cover md:w-[300px] md:h-[300px]"
                   />
@@ -36,20 +40,26 @@ const Projects = (props: Props) => {
                         <span className="underline decoration-[#E85A4F]/50">
                            Case Study {index + 1} of {projects.length}:
                         </span>{" "}
-                        movie app
+                        {project.title}
                      </h4>
 
+                     <div className="flex justify-center items-center gap-4">
+                        {project?.technologies.map((tech) => (
+                           <Image
+                              key={tech._id}
+                              src={urlFor(tech?.image).url()}
+                              width={40}
+                              height={40}
+                              style={{
+                                 borderRadius: "50%",
+                                 backgroundColor: "white",
+                                 objectFit: "cover"
+                              }}
+                           />
+                        ))}
+                     </div>
                      <p className="text-xs text-center md:text-left md:text-lg">
-                        The Movie Ticket Purchasing app simulates an app used to
-                        book movie tickets. Eventhough the app is simple as it
-                        does not have many movies it has enough to represent an
-                        actual app that a movie theater would use for ticketing.
-                        It features functionalities such as being able to
-                        register a new account, login in to those accounts, and
-                        pay for movies just how you would in any other movie
-                        ticketing app. Eventhough the app is not complete it was
-                        written using OOP standards and can be easily expanded
-                        without having to change any old code written.
+                        {project.summary}
                      </p>
                   </div>
                </div>
